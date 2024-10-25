@@ -1,0 +1,21 @@
+/* About Section Styles */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+    animation: pop-up 0.6s ease-in-out forwards; /* Apply pop-up effect */
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

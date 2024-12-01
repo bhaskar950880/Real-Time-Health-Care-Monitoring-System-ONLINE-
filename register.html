@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Registration</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at bottom, #031a30, #000000);
+            color: #452d2d;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        @keyframes stars {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 10000px; }
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            opacity: 0.15;
+            animation: stars 100s linear infinite;
+            z-index: -1;
+        }
+
+        header {
+            background-color: #012A4A;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #B3E5FC;
+            font-size: 1.1rem;
+            transition: transform 0.2s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.1);
+            color: #FFEB3B;
+        }
+
+        .registration-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: rgba(0, 50, 120, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+            color: #FFF;
+        }
+
+        .registration-form h2 {
+            text-align: center;
+            color: #FFEB3B;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            color: #B3E5FC;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+        }
+
+        .form-group select {
+            color: black; /* Set text color to black for the dropdown options */
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #FFEB3B;
+            box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            color: #012A4A;
+            background-color: #FFEB3B;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #012A4A;
+            padding: 20px;
+            text-align: center;
+            color: #B3E5FC;
+        }
+
+        .error-message {
+            color: #FF5722;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: #FF5722;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF73gHXqdhILiRzOjgfcn4Dr5AKZ3rfJi6wQ&s" alt="Healthcare Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="registration-form">
+        <h2>New User Registration</h2>
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="female">Transgender</option>
+                    <option value="other">Rather Not Say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact No:</label>
+                <input type="text" id="contact" name="contact" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medicalHistory">Medical History:</label>
+                <textarea id="medicalHistory" name="medicalHistory" rows="4" placeholder="Any past medical conditions, surgeries, etc."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Stay connected with us on social media!</p>
+    </footer>
+
+    <script>
+        // JavaScript for validation and interactivity
+        document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const emailField = document.getElementById('email');
+        const passwordField = document.getElementById('password');
+        const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
+        const errorMessages = {};
+
+        // Email Validation
+        emailField.addEventListener('input', function () {
+            const email = emailField.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError(emailField, 'Please enter a valid email address.');
+            } else {
+                clearError(emailField);
+            }
+        });
+
+        // Password Strength Validation
+        passwordField.addEventListener('input', function () {
+            const password = passwordField.value;
+            const strengthMessage = getPasswordStrength(password);
+            if (strengthMessage) {
+                showError(passwordField, strengthMessage);
+            } else {
+                clearError(passwordField);
+            }
+        });
+
+        function getPasswordStrength(password) {
+            if (password.length < 6) return 'Password must be at least 6 characters long.';
+            if (!/[A-Z]/.test(password)) return 'Password must contain at least one uppercase letter.';
+            if (!/[a-z]/.test(password)) return 'Password must contain at least one lowercase letter.';
+            if (!/[0-9]/.test(password)) return 'Password must contain at least one digit.';
+            return null;
+        }
+
+        // Required Field Validation
+        requiredFields.forEach(function (field) {
+            field.addEventListener('invalid', function () {
+                if (!field.validity.valid) {
+                    showError(field, `${field.previousElementSibling.innerText} is required.`);
+                }
+            });
+            field.addEventListener('input', function () {
+                if (field.validity.valid) {
+                    clearError(field);
+                }
+            });
+        });
+
+        function showError(field, message) {
+            let errorMessage = errorMessages[field.id];
+            if (!errorMessage) {
+                errorMessage = document.createElement('div');
+                errorMessage.classList.add('error-message');
+                field.parentNode.appendChild(errorMessage);
+                errorMessages[field.id] = errorMessage;
+            }
+            errorMessage.textContent = message;
+        }
+
+        function clearError(field) {
+            let errorMessage = errorMessages[field.id];
+            if (errorMessage) {
+                errorMessage.textContent = '';
+                delete errorMessages[field.id];
+            }
+        }
+        });
+    </script>
+</body>
+</html>
+

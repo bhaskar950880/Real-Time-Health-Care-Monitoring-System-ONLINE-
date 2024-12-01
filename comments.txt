@@ -1,0 +1,7 @@
+project-directory/
+│
+├── index.html
+├── styles.css
+├── form-validation.js
+├── navbar-highlight.js
+└── smooth-scroll.js
